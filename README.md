@@ -1,6 +1,6 @@
 # order
 
-Keep YAML and JSON files organised by checking their property order against a JSON schema.
+Keep YAML and JSON files organised by checking their property order against a [JSON schema](https://json-schema.org/).
 
 Use `order` if:
 
