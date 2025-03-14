@@ -2,6 +2,12 @@
 
 Keep YAML and JSON files organised by checking their property order against a JSON schema.
 
+Use `order` if:
+
+- You have many contributors to a repository and want to enforce style consistency
+- You want to reduce mental effort in code reviews with a predictable pattern.
+- You want your YAML or JSON files to stay neat and consistent.
+
 ## Installation
 
 ```bash
@@ -92,11 +98,3 @@ See [examples/main.go](examples/main.go) for a complete example.
 
 - It doesn't check types or required fields—just the order.
 - It only uses the properties part of the schema.
-
-## When to Use It
-
-Use `order` if:
-
-- You have many contributors to a repository and want to enforce style consistency
-- You want to reduce mental effort in code reviews with a predictable pattern.
-- You want your YAML or JSON files to stay neat and consistent.
