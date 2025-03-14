@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Application Configuration Schema",
+  "description": "Schema for validating application configuration files",
+  "type": "object",
+  "required": ["name", "version"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the application",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "description": "The semantic version of the application",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the application"
+    },
+    "config": {
+      "type": "object",
+      "description": "Configuration settings for the application",
+      "properties": {
+        "environment": {
+          "type": "string",
+          "description": "The environment the application is running in",
+          "enum": ["development", "testing", "staging", "production"]
+        },
+        "debug": {
+          "type": "boolean",
+          "description": "Whether debug mode is enabled"
+        },
+        "timeout": {
+          "type": "integer",
+          "description": "Timeout in seconds",
+          "minimum": 0,
+          "maximum": 3600
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "description": "External dependencies required by the application",
+      "properties": {
+        "required": {
+          "type": "object",
+          "description": "Dependencies that must be included",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^\\^?[0-9]+(\\.[0-9]+)*$"
+          }
+        },
+        "optional": {
+          "type": "object",
+          "description": "Dependencies that are optional",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^\\^?[0-9]+(\\.[0-9]+)*$"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+} 

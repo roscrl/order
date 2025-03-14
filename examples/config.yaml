@@ -1,0 +1,13 @@
+name: order-test-app
+version: 1.0.0
+description: A test application for the order linting tool
+config:
+  environment: development
+  debug: true
+  timeout: 30
+dependencies:
+  required:
+    yaml: ^3.0.0
+    json: ^1.0.0
+  optional:
+    logger: ^2.1.0 
