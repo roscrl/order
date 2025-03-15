@@ -93,8 +93,3 @@ scripts:
 This causes an error: "version" is out of order; it should come after "name".
 
 See [examples/main.go](examples/main.go) for a complete example.
-
-## What It Doesn't Do
-
-- It doesn't check types or required fields—just the order.
-- It only uses the properties part of the schema.
